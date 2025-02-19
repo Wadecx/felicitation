@@ -1,0 +1,71 @@
+/* Style global */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4; /* Fond clair pour contraster avec la carte */
+  margin: 0;
+}
+
+/* Carte principale */
+.credit {
+  width: 350px; /* Taille de la carte */
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+  overflow: hidden; /* Assurer que le fond reste à l'intérieur du border-radius */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+
+  /* Animation de haut en bas */
+  animation: moveUpDown 4s ease-in-out infinite; /* Animation de 4 secondes, avec une répétition infinie */
+}
+
+/* Animation de déplacement haut en bas */
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(-30px); /* Départ en haut */
+  }
+  50% {
+    transform: translateY(30px); /* Déplacement vers le bas */
+  }
+  100% {
+    transform: translateY(-30px); /* Retour vers le haut */
+  }
+}
+
+/* Partie Titre */
+.title {
+  background-color: #333; /* Fond noir légèrement adouci */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5em; /* Taille du texte pour le titre */
+  letter-spacing: 2px; /* Espacement des lettres pour plus d'élégance */
+  font-weight: bold;
+}
+
+/* Partie Description */
+.desc {
+  background-color: #fff; /* Fond blanc pour la description */
+  color: #333; /* Texte noir */
+  text-align: center;
+  padding: 25px 15px; /* Padding confortable */
+  font-size: 1.1em;
+  line-height: 1.6; /* Meilleure lisibilité */
+  border-top: 1px solid #f0f0f0; /* Légère séparation entre le titre et la description */
+}
+
+/* Effet de hover sur la carte */
+.credit:hover {
+  transform: translateY(-5px); /* Légère élévation de la carte au survol */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Effet sur le titre lorsqu'on survole */
+.title:hover {
+  background-color: #444; /* Assombrissement du fond du titre lors du hover */
+}
